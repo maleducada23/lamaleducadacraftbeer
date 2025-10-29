@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>La Maleducada CraftBeer — La rebeldía se sirve fría</title>
+  <meta name="description" content="La Maleducada CraftBeer — Cervezas irreverentes, sensuales y artesanales. Descubre nuestras creaciones y pide tu lata." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0b0b;
+      --card:#141414;
+      --accent:#d32f2f; /* rojo */
+      --accent-2:#f0c23a; /* amarillo */
+      --muted:#bdbdbd;
+      --glass: rgba(255,255,255,0.03);
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:var(--bg);color:#fff;font-family:Montserrat,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px}
+
+    /* Header / Hero */
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:64px;height:64px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#7f0000);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#111}
+    nav a{margin-left:18px;font-weight:600;color:var(--muted)}
+
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:48px 0}
+    .hero-left h1{font-family:'Playfair Display',serif;font-size:44px;margin:0 0 8px;line-height:1}
+    .kicker{color:var(--accent);font-weight:700;margin-bottom:12px}
+    .lead{color:var(--muted);margin-bottom:20px}
+    .cta{display:inline-block;background:var(--accent);color:#111;padding:12px 18px;border-radius:8px;font-weight:800}
+    .secondary{margin-left:12px;color:var(--muted);padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.04)}
+
+    .hero-right{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px}
+    .hero-img{width:100%;height:320px;border-radius:10px;object-fit:cover;display:block;filter:contrast(1.05) saturate(1.05)}
+
+    /* Sections */
+    section{padding:40px 0;border-top:1px solid rgba(255,255,255,0.02)}
+    .section-title{display:flex;align-items:end;gap:12px}
+    .section-title h2{font-family:'Playfair Display',serif;margin:0;font-size:28px}
+    .section-title p{margin:0;color:var(--muted)}
+
+    /* Beers grid */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:18px}
+    .card{background:var(--card);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+    .card img{width:100%;height:150px;object-fit:cover;border-radius:8px}
+    .badge{display:inline-block;padding:6px 8px;border-radius:6px;background:var(--glass);color:var(--muted);font-size:12px;margin-top:8px}
+    .card h3{margin:8px 0 4px;font-size:16px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Manifesto */
+    .manifest{display:flex;gap:18px;align-items:center}
+    .manifest .text{flex:1}
+    .manifest .poster{width:280px;border-radius:10px;overflow:hidden}
+
+    /* Where to buy */
+    .places{display:flex;flex-direction:column;gap:8px}
+    .place{padding:12px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));display:flex;justify-content:space-between;align-items:center}
+
+    /* Contact */
+    .socials{display:flex;gap:12px;align-items:center}
+    .socials a{padding:10px;border-radius:8px;background:var(--glass);display:inline-flex;align-items:center;gap:8px}
+
+    footer{padding:22px 0;color:var(--muted);font-size:13px}
+
+    /* Floating WhatsApp */
+    .whatsapp{position:fixed;right:18px;bottom:18px;background:linear-gradient(45deg,var(--accent),#b71c1c);width:56px;height:56px;border-radius:999px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(0,0,0,0.6);z-index:99}
+    .whatsapp a{color:#fff;font-weight:800}
+
+    /* Responsive */
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .hero-right{order:-1}
+    }
+
+    /* small niceties */
+    .muted{color:var(--muted)}
+    .accent{color:var(--accent)}
+    .pill{padding:6px 10px;border-radius:999px;background:var(--glass);font-weight:700}
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">M</div>
+        <div>
+          <div style="font-weight:800">La Maleducada</div>
+          <div style="font-size:12px;color:var(--muted)">CraftBeer — Bogotá</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#cervezas">Cervezas</a>
+        <a href="#donde">Dónde</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-left">
+          <div class="kicker">La rebeldía se sirve fría</div>
+          <h1>Una cerveza que te mira y te tienta</h1>
+          <p class="lead">Irreverente, sensual y con carácter. Nuestras cervezas nacen para los que no piden permiso. Explora el catálogo y descubre tu pecado favorito.</p>
+          <div>
+            <a class="cta" href="#cervezas">Conoce las cervezas</a>
+            <a class="secondary" href="#contacto">Pide por WhatsApp</a>
+          </div>
+          <div style="margin-top:18px;color:var(--muted);font-size:13px">Edición temporal: imágenes vintage (placeholder). Reemplaza con fotos reales cuando tengas.</div>
+        </div>
+        <div class="hero-right">
+          <img class="hero-img" src="https://source.unsplash.com/collection/9068315/800x600" alt="Imagen vintage cerveza">
+        </div>
+      </section>
+
+      <section id="cervezas">
+        <div class="section-title">
+          <h2>Nuestro Portafolio</h2>
+          <p class="muted">10 recetas con personalidad</p>
+        </div>
+
+        <div class="grid" style="margin-top:18px">
+          <!-- Cards: usa los estilos que figuran en tu inventario -->
+
+          <div class="card">
+            <img src="https://source.unsplash.com/600x400/?stout,beer" alt="Imperial Stout">
+            <div class="badge">Imperial Stout</div>
+            <h3>Imperial Stout clásica</h3>
+            <p class="muted">Oscura, potente y seductora. Notas a chocolate y café tostado.</p>
+          </div>
+
+          <div class="card">
+            <img src="https://source.unsplash.com/600x400/?blonde,beer" alt="Blonde Ale arandanos">
+            <div class="badge">Blonde Ale</div>
+            <h3>Blonde Ale con arándanos, menta y jengibre</h3>
+            <p class="muted">Orgánica, fresca y juguetona; un giro frutal y herbal.</p>
+          </div>
+
+          <div class="card">
+            <img src="https://source.unsplash.com/600x400/?blonde,glass" alt="Blonde Ale clásica">
+            <div class="badge">Blonde Ale</div>
+            <h3>Blonde Ale clásica</h3>
+            <p class="muted">Ligera, crujiente y fácil de beber. El comodín de la casa.</p>
+          </div>
+
+          <div class="card">
+            <img src="https://source.unsplash.com/600x400/?red,beer" alt="Irish Red">
+            <div class="badge">Irish Red</div>
+            <h3>Irish Red madurada con madera de maple</h3>
+            <p class="muted">Cálida, con dulce amaderado y caramelo suave.</p>
+          </div>
+
+          <div class="card">
+            <img src="https://source.unsplash.com/600x400/?saison,beer" alt="Saison uchuva">
+            <div class="badge">Saison</div>
+            <h3>Saison con uchuva</h3>
+            <p class="muted">Afrutada, seca y aromática. Una sorpresa tropical.</p>
+          </div>
+
+          <div class="card">
+            <img src="https://source.unsplash.com/600x400/?sour,beer" alt="Sour sandia">
+            <div class="badge">Sour</div>
+            <h3>Sour con sandía</h3>
+            <p class="muted">Ácida y refrescante — perfecta para días de calor.</p>
+          </div>
+
+          <div class="card">
+            <img src="https://source.unsplash.com/600x400/?brown,beer" alt="Brown Amburana">
+            <div class="badge">Brown Ale</div>
+            <h3>Brown Ale madurada en madera de amburana</h3>
+            <p class="muted">Compleja, con notas especiadas y dulces de la amburana.</p>
+          </div>
+
+          <div class="card">
+            <img src="https://source.unsplash.com/600x400/?ipa,beer" alt="IPA">
+            <div class="badge">IPA</div>
+            <h3>IPA</h3>
+            <p class="muted">Lúpulos vivos y perfil cítrico. Golpe aromático bien balanceado.</p>
+          </div>
+
+          <div class="card">
+            <img src="https://source.unsplash.com/600x400/?double-ipa,beer" alt="Doble IPA">
+            <div class="badge">Doble IPA</div>
+            <h3>Doble IPA</h3>
+            <p class="muted">Más lúpulo, más cuerpo, más pecado por sorbo.</p>
+          </div>
+
+          <div class="card">
+            <img src="https://source.unsplash.com/600x400/?belgian,beer" alt="Belgian Dark Strong">
+            <div class="badge">Belgian</div>
+            <h3>Belgian Dark Strong Ale</h3>
+            <p class="muted">Oscura, especiada y elegante — un final memorable.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <section id="nosotros">
+        <div class="section-title">
+          <h2>El Manifiesto</h2>
+          <p class="muted">La Maleducada: irreverencia con clase</p>
+        </div>
+        <div class="manifest" style="margin-top:18px">
+          <div class="text">
+            <p class="muted">No nacimos para gustarle a todos. Nacimos para tentar a los que saben disfrutar sin pedir permiso. En La Maleducada hacemos cerveza con carácter: texturas, lúpulos y sabores que empujan los límites. Cada lata es una invitación al placer, un desafío a la rutina.</p>
+            <p style="margin-top:12px">Nuestra estética mezcla la sensualidad clásica del pinup con la crudeza del craft. Somos sofisticados, pero no pomposos. Rebeldes, pero con oficio. Y siempre, siempre, irreverentes.</p>
+          </div>
+          <div class="poster">
+            <img src="https://source.unsplash.com/400x600/?pinup,vintage" alt="Pinup vintage" style="width:100%;display:block">
+          </div>
+        </div>
+      </section>
+
+      <section id="donde">
+        <div class="section-title">
+          <h2>Dónde conseguirla</h2>
+          <p class="muted">Puntos aliados y barras amigas en Bogotá</p>
+        </div>
+        <div class="places" style="margin-top:18px">
+          <div class="place">
+            <div>
+              <div style="font-weight:700">Bar Rebelde</div>
+              <div class="muted" style="font-size:13px">Calle Falsa 123 — Chapinero</div>
+            </div>
+            <div class="pill">Latas • 330ml</div>
+          </div>
+
+          <div class="place">
+            <div>
+              <div style="font-weight:700">La Barra de Matilda</div>
+              <div class="muted" style="font-size:13px">Carrera 7 — Zona Rosa</div>
+            </div>
+            <div class="pill">Keg • Especial</div>
+          </div>
+
+          <div class="place">
+            <div>
+              <div style="font-weight:700">Mercado de Cervezas</div>
+              <div class="muted" style="font-size:13px">Bogotá — Sábados</div>
+            </div>
+            <div class="pill">Puntos de venta</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacto">
+        <div class="section-title">
+          <h2>Contacto</h2>
+          <p class="muted">¿Quieres distribuir o colaborar? Escríbenos.</p>
+        </div>
+        <div style="display:flex;gap:18px;align-items:center;margin-top:18px;flex-wrap:wrap">
+          <div style="min-width:240px">
+            <div style="font-weight:700">WhatsApp</div>
+            <div class="muted" style="font-size:13px">+57 311 285 1332</div>
+            <a class="cta" href="https://wa.me/573112851332?text=Hola%20La%20Maleducada%21%20Quiero%20pedir%20informaci%C3%B3n%20sobre%20distribuci%C3%B3n" style="display:inline-block;margin-top:12px">Escríbenos</a>
+          </div>
+
+          <div>
+            <div style="font-weight:700">Redes</div>
+            <div class="socials" style="margin-top:10px">
+              <a href="https://instagram.com/cervezalamaleducada" target="_blank">Instagram</a>
+              <a href="https://www.tiktok.com/@la.maleducada.cra" target="_blank">TikTok</a>
+            </div>
+          </div>
+
+          <div style="flex:1">
+            <div style="font-weight:700">Correo</div>
+            <div class="muted" style="font-size:13px">hola@lamaleducada.com (placeholder)</div>
+            <div style="margin-top:10px;color:var(--muted);font-size:13px">Si prefieres, deja tu mensaje en Instagram o envíanos un WhatsApp — respondemos rápido.</div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+        <div>© La Maleducada CraftBeer — Hecha con rebeldía</div>
+        <div class="muted">Diseño provisional · Imágenes temporales</div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- WhatsApp floating -->
+  <div class="whatsapp" aria-hidden="false">
+    <a href="https://wa.me/573112851332?text=Hola%20La%20Maleducada%21%20Quiero%20pedir%20informaci%C3%B3n" target="_blank" rel="noopener">WA</a>
+  </div>
+
+  <script>
+    // Smooth anchor scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        e.preventDefault();
+        const id=a.getAttribute('href').slice(1);
+        if(!id) return; const el=document.getElementById(id);
+        if(el) el.scrollIntoView({behavior:'smooth'});
+      })
+    })
+
+    // Small progressive enhancement: replace 'M' logo letter with stylized initial on load
+    document.addEventListener('DOMContentLoaded',()=>{
+      const logo=document.querySelector('.logo');
+      if(logo) logo.innerHTML = '<span style="font-family:Playfair Display, serif;font-size:28px;color:#111;">M</span>';
+    });
+  </script>
+</body>
+</html>
