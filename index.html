@@ -3,41 +3,73 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>La Maleducada CraftBeer — La rebeldía se sirve fría</title>
-  <meta name="description" content="La Maleducada CraftBeer — Cervezas irreverentes, sensuales y artesanales. Descubre nuestras creaciones y pide tu lata." />
+  <title>La Maleducada CraftBeer — Cerveza artesanal irreverente en Bogotá</title>
+  <meta name="description" content="La Maleducada CraftBeer: cervezas artesanales irreverentes, sensuales y de autor hechas en Bogotá. Descubre dónde encontrarlas y únete a la comunidad." />
+  <link rel="canonical" href="https://maleducada23.github.io/lamaleducada/" />
+  <meta name="robots" content="index,follow" />
+
+  <!-- OpenGraph / Social -->
+  <meta property="og:site_name" content="La Maleducada CraftBeer" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="La Maleducada CraftBeer — Cerveza artesanal irreverente en Bogotá" />
+  <meta property="og:description" content="Cervezas artesanales irreverentes, sensuales y de autor. Descubre dónde encontrarlas en Bogotá y únete a la comunidad." />
+  <meta property="og:image" content="/assets/og-cerveza.jpg" />
+  <meta property="og:url" content="https://maleducada23.github.io/lamaleducada/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Preconnect fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
+
+  <!-- Structured data (LocalBusiness) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Brewery",
+    "name":"La Maleducada CraftBeer",
+    "description":"Cerveza artesanal irreverente, sensual y de autor hecha en Bogotá.",
+    "url":"https://maleducada23.github.io/lamaleducada/",
+    "telephone":"+573112851332",
+    "address":{
+      "@type":"PostalAddress",
+      "addressLocality":"Bogotá",
+      "addressCountry":"CO"
+    },
+    "sameAs":[
+      "https://instagram.com/cervezalamaleducada",
+      "https://www.tiktok.com/@la.maleducada.cra"
+    ]
+  }
+  </script>
+
   <style>
     :root{
-      --bg:#0b0b0b;
-      --card:#141414;
-      --accent:#d32f2f; /* rojo */
-      --accent-2:#f0c23a; /* amarillo */
-      --muted:#bdbdbd;
-      --glass: rgba(255,255,255,0.03);
-      --maxw:1100px;
+      --bg:#070606; --card:#0f0f0f; --accent:#d32f2f; --accent-2:#f0c23a; --muted:#bdbdbd; --glass:rgba(255,255,255,0.03); --maxw:1100px; --radius:12px;
+      --transition:all .22s cubic-bezier(.2,.9,.2,1);
     }
     *{box-sizing:border-box}
     html,body{height:100%;margin:0;background:var(--bg);color:#fff;font-family:Montserrat,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial}
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--maxw);margin:0 auto;padding:28px}
 
-    /* Header / Hero */
-    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0;position:sticky;top:0;background:linear-gradient(180deg, rgba(7,7,7,0.85), rgba(7,7,7,0.65));backdrop-filter: blur(3px);z-index:60}
     .brand{display:flex;align-items:center;gap:14px}
     .logo{width:64px;height:64px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#7f0000);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#111}
     nav a{margin-left:18px;font-weight:600;color:var(--muted)}
 
+    /* Hero */
     .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:48px 0}
-    .hero-left h1{font-family:'Playfair Display',serif;font-size:44px;margin:0 0 8px;line-height:1}
-    .kicker{color:var(--accent);font-weight:700;margin-bottom:12px}
-    .lead{color:var(--muted);margin-bottom:20px}
-    .cta{display:inline-block;background:var(--accent);color:#111;padding:12px 18px;border-radius:8px;font-weight:800}
-    .secondary{margin-left:12px;color:var(--muted);padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.04)}
+    .hero-left .kicker{color:var(--accent);font-weight:700;margin-bottom:12px}
+    .hero-left h1{font-family:'Playfair Display',serif;font-size:44px;margin:0 0 8px;line-height:1.02}
+    .lead{color:var(--muted);margin-bottom:20px;font-size:16px}
+    .cta{display:inline-block;background:var(--accent);color:#111;padding:12px 18px;border-radius:10px;font-weight:800;transition:var(--transition)}
+    .cta:hover{transform:translateY(-3px)}
+    .secondary{margin-left:12px;color:var(--muted);padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.04)}
 
-    .hero-right{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px}
-    .hero-img{width:100%;height:320px;border-radius:10px;object-fit:cover;display:block;filter:contrast(1.05) saturate(1.05)}
+    .hero-right{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:var(--radius);box-shadow:0 6px 20px rgba(0,0,0,0.6)}
+    .hero-img{width:100%;height:360px;border-radius:8px;object-fit:cover;display:block;filter:contrast(1.03) saturate(1.05)}
 
     /* Sections */
     section{padding:40px 0;border-top:1px solid rgba(255,255,255,0.02)}
@@ -45,9 +77,10 @@
     .section-title h2{font-family:'Playfair Display',serif;margin:0;font-size:28px}
     .section-title p{margin:0;color:var(--muted)}
 
-    /* Beers grid */
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:18px}
-    .card{background:var(--card);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+    /* Grid */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px}
+    .card{background:linear-gradient(180deg,var(--card),#0b0b0b);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);transition:var(--transition);cursor:pointer}
+    .card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(0,0,0,0.6)}
     .card img{width:100%;height:150px;object-fit:cover;border-radius:8px}
     .badge{display:inline-block;padding:6px 8px;border-radius:6px;background:var(--glass);color:var(--muted);font-size:12px;margin-top:8px}
     .card h3{margin:8px 0 4px;font-size:16px}
@@ -56,33 +89,39 @@
     /* Manifesto */
     .manifest{display:flex;gap:18px;align-items:center}
     .manifest .text{flex:1}
-    .manifest .poster{width:280px;border-radius:10px;overflow:hidden}
+    .manifest .poster{width:320px;border-radius:10px;overflow:hidden}
 
-    /* Where to buy */
+    /* Places */
     .places{display:flex;flex-direction:column;gap:8px}
-    .place{padding:12px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));display:flex;justify-content:space-between;align-items:center}
+    .place{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));display:flex;justify-content:space-between;align-items:center}
 
-    /* Contact */
+    /* Social */
     .socials{display:flex;gap:12px;align-items:center}
-    .socials a{padding:10px;border-radius:8px;background:var(--glass);display:inline-flex;align-items:center;gap:8px}
+    .socials a{padding:10px;border-radius:10px;background:var(--glass);display:inline-flex;align-items:center;gap:8px}
 
     footer{padding:22px 0;color:var(--muted);font-size:13px}
 
     /* Floating WhatsApp */
-    .whatsapp{position:fixed;right:18px;bottom:18px;background:linear-gradient(45deg,var(--accent),#b71c1c);width:56px;height:56px;border-radius:999px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(0,0,0,0.6);z-index:99}
+    .whatsapp{position:fixed;right:18px;bottom:18px;background:linear-gradient(45deg,var(--accent),#b71c1c);width:64px;height:64px;border-radius:999px;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 40px rgba(0,0,0,0.6);z-index:99}
     .whatsapp a{color:#fff;font-weight:800}
 
-    /* Responsive */
-    @media(max-width:900px){
-      .hero{grid-template-columns:1fr}
-      .hero-right{order:-1}
-    }
-
-    /* small niceties */
+    /* Small helpers */
     .muted{color:var(--muted)}
     .accent{color:var(--accent)}
     .pill{padding:6px 10px;border-radius:999px;background:var(--glass);font-weight:700}
 
+    /* Modal beer */
+    .modal{position:fixed;left:0;top:0;right:0;bottom:0;background:rgba(0,0,0,0.7);display:flex;align-items:center;justify-content:center;padding:24px;z-index:120;opacity:0;pointer-events:none;transition:opacity .18s}
+    .modal.open{opacity:1;pointer-events:auto}
+    .modal .box{background:linear-gradient(180deg,#0d0d0d,#0a0a0a);padding:20px;border-radius:12px;max-width:900px;width:100%;display:grid;grid-template-columns:1fr 320px;gap:18px}
+    .modal img{width:100%;height:100%;object-fit:cover;border-radius:8px}
+
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .hero-right{order:-1}
+      .manifest{flex-direction:column}
+      .modal .box{grid-template-columns:1fr}
+    }
   </style>
 </head>
 <body>
@@ -95,7 +134,7 @@
           <div style="font-size:12px;color:var(--muted)">CraftBeer — Bogotá</div>
         </div>
       </div>
-      <nav>
+      <nav aria-label="Navegación principal">
         <a href="#cervezas">Cervezas</a>
         <a href="#donde">Dónde</a>
         <a href="#nosotros">Nosotros</a>
@@ -104,124 +143,127 @@
     </header>
 
     <main>
-      <section class="hero">
+      <!-- HERO -->
+      <section class="hero" id="inicio">
         <div class="hero-left">
           <div class="kicker">La rebeldía se sirve fría</div>
           <h1>Una cerveza que te mira y te tienta</h1>
-          <p class="lead">Irreverente, sensual y con carácter. Nuestras cervezas nacen para los que no piden permiso. Explora el catálogo y descubre tu pecado favorito.</p>
+          <p class="lead">Irreverente pero con elegancia. Nuestras cervezas nacen para quienes saben que el placer se saborea lento. Únete a la comunidad y descubre dónde encontrar La Maleducada en Bogotá.</p>
           <div>
-            <a class="cta" href="#cervezas">Conoce las cervezas</a>
-            <a class="secondary" href="#contacto">Pide por WhatsApp</a>
+            <a class="cta" href="#cervezas">Descubre tu pecado</a>
+            <a class="secondary" href="https://wa.me/573112851332?text=Hola%20La%20Maleducada%21%20Quiero%20saber%20d%C3%B3nde%20comprar%20tu%20cerveza" target="_blank" rel="noopener">Pide por WhatsApp</a>
           </div>
-          <div style="margin-top:18px;color:var(--muted);font-size:13px">Edición temporal: imágenes vintage (placeholder). Reemplaza con fotos reales cuando tengas.</div>
+          <div style="margin-top:18px;color:var(--muted);font-size:13px">Imágenes temporales: reemplaza por fotos propias (optimizadas .webp).</div>
         </div>
-        <div class="hero-right">
-          <img class="hero-img" src="https://source.unsplash.com/collection/9068315/800x600" alt="Imagen vintage cerveza">
+        <div class="hero-right" aria-hidden="true">
+          <img class="hero-img" src="https://source.unsplash.com/collection/9068315/900x700" alt="Imagen vintage cerveza" loading="lazy">
         </div>
       </section>
 
-      <section id="cervezas">
+      <!-- CERvezas -->
+      <section id="cervezas" aria-labelledby="cervezas-title">
         <div class="section-title">
-          <h2>Nuestro Portafolio</h2>
-          <p class="muted">10 recetas con personalidad</p>
+          <h2 id="cervezas-title">Nuestro Portafolio</h2>
+          <p class="muted">10 recetas, 10 personalidades. Clic en cada una para saber más.</p>
         </div>
 
         <div class="grid" style="margin-top:18px">
-          <!-- Cards: usa los estilos que figuran en tu inventario -->
-
-          <div class="card">
-            <img src="https://source.unsplash.com/600x400/?stout,beer" alt="Imperial Stout">
+          <!-- Card template: data attributes para el modal -->
+          <article class="card" tabindex="0" role="button" data-title="Imperial Stout clásica" data-image="https://source.unsplash.com/800x600/?stout,beer" data-desc="Oscura, potente y seductora. Notas a chocolate y café tostado. Perfecta para noches largas.">
+            <img src="https://source.unsplash.com/600x400/?stout,beer" alt="Imperial Stout - La Maleducada" loading="lazy">
             <div class="badge">Imperial Stout</div>
             <h3>Imperial Stout clásica</h3>
             <p class="muted">Oscura, potente y seductora. Notas a chocolate y café tostado.</p>
-          </div>
+          </article>
 
-          <div class="card">
-            <img src="https://source.unsplash.com/600x400/?blonde,beer" alt="Blonde Ale arandanos">
+          <article class="card" tabindex="0" role="button" data-title="Blonde Ale con arándanos, menta y jengibre" data-image="https://source.unsplash.com/800x600/?blonde,red,beer" data-desc="Orgánica, fresca y juguetona; arándanos, menta y un toque de jengibre para un final chispeante.">
+            <img src="https://source.unsplash.com/600x400/?blonde,beer" alt="Blonde Ale con arándanos, menta y jengibre - La Maleducada" loading="lazy">
             <div class="badge">Blonde Ale</div>
-            <h3>Blonde Ale con arándanos, menta y jengibre</h3>
+            <h3>Blonde Ale - Arándanos, menta y jengibre</h3>
             <p class="muted">Orgánica, fresca y juguetona; un giro frutal y herbal.</p>
-          </div>
+          </article>
 
-          <div class="card">
-            <img src="https://source.unsplash.com/600x400/?blonde,glass" alt="Blonde Ale clásica">
+          <article class="card" tabindex="0" role="button" data-title="Blonde Ale clásica" data-image="https://source.unsplash.com/800x600/?blonde,glass" data-desc="Ligera, crujiente y fácil de beber. El comodín de la casa para cualquier ocasión.">
+            <img src="https://source.unsplash.com/600x400/?blonde,glass" alt="Blonde Ale clásica - La Maleducada" loading="lazy">
             <div class="badge">Blonde Ale</div>
             <h3>Blonde Ale clásica</h3>
             <p class="muted">Ligera, crujiente y fácil de beber. El comodín de la casa.</p>
-          </div>
+          </article>
 
-          <div class="card">
-            <img src="https://source.unsplash.com/600x400/?red,beer" alt="Irish Red">
+          <article class="card" tabindex="0" role="button" data-title="Irish Red madurada con madera de maple" data-image="https://source.unsplash.com/800x600/?red,beer" data-desc="Cálida, con dulce amaderado y caramelo suave. Ideal para maridar con postres.">
+            <img src="https://source.unsplash.com/600x400/?red,beer" alt="Irish Red madurada con madera de maple - La Maleducada" loading="lazy">
             <div class="badge">Irish Red</div>
-            <h3>Irish Red madurada con madera de maple</h3>
+            <h3>Irish Red — Maple</h3>
             <p class="muted">Cálida, con dulce amaderado y caramelo suave.</p>
-          </div>
+          </article>
 
-          <div class="card">
-            <img src="https://source.unsplash.com/600x400/?saison,beer" alt="Saison uchuva">
+          <article class="card" tabindex="0" role="button" data-title="Saison con uchuva" data-image="https://source.unsplash.com/800x600/?saison,fruit" data-desc="Afrutada, seca y aromática. Un soplo tropical con carácter belga.">
+            <img src="https://source.unsplash.com/600x400/?saison,beer" alt="Saison con uchuva - La Maleducada" loading="lazy">
             <div class="badge">Saison</div>
             <h3>Saison con uchuva</h3>
             <p class="muted">Afrutada, seca y aromática. Una sorpresa tropical.</p>
-          </div>
+          </article>
 
-          <div class="card">
-            <img src="https://source.unsplash.com/600x400/?sour,beer" alt="Sour sandia">
+          <article class="card" tabindex="0" role="button" data-title="Sour con sandía" data-image="https://source.unsplash.com/800x600/?sour,watermelon" data-desc="Ácida y refrescante — perfecta para días de calor y para romper la monotonía.">
+            <img src="https://source.unsplash.com/600x400/?sour,beer" alt="Sour con sandía - La Maleducada" loading="lazy">
             <div class="badge">Sour</div>
             <h3>Sour con sandía</h3>
             <p class="muted">Ácida y refrescante — perfecta para días de calor.</p>
-          </div>
+          </article>
 
-          <div class="card">
-            <img src="https://source.unsplash.com/600x400/?brown,beer" alt="Brown Amburana">
+          <article class="card" tabindex="0" role="button" data-title="Brown Ale madurada en madera de amburana" data-image="https://source.unsplash.com/800x600/?brown,beer" data-desc="Compleja, con notas especiadas y dulces de la amburana. Para paladares que buscan profundidad.">
+            <img src="https://source.unsplash.com/600x400/?brown,beer" alt="Brown Ale madurada en amburana - La Maleducada" loading="lazy">
             <div class="badge">Brown Ale</div>
-            <h3>Brown Ale madurada en madera de amburana</h3>
+            <h3>Brown Ale — Amburana</h3>
             <p class="muted">Compleja, con notas especiadas y dulces de la amburana.</p>
-          </div>
+          </article>
 
-          <div class="card">
-            <img src="https://source.unsplash.com/600x400/?ipa,beer" alt="IPA">
+          <article class="card" tabindex="0" role="button" data-title="IPA" data-image="https://source.unsplash.com/800x600/?ipa,beer" data-desc="Lúpulos vivos y perfil cítrico. Golpe aromático bien balanceado para los que exigen intensidad.">
+            <img src="https://source.unsplash.com/600x400/?ipa,beer" alt="IPA - La Maleducada" loading="lazy">
             <div class="badge">IPA</div>
             <h3>IPA</h3>
             <p class="muted">Lúpulos vivos y perfil cítrico. Golpe aromático bien balanceado.</p>
-          </div>
+          </article>
 
-          <div class="card">
-            <img src="https://source.unsplash.com/600x400/?double-ipa,beer" alt="Doble IPA">
+          <article class="card" tabindex="0" role="button" data-title="Doble IPA" data-image="https://source.unsplash.com/800x600/?double-ipa,beer" data-desc="Más lúpulo, más cuerpo, más pecado por sorbo. No apta para tibios.">
+            <img src="https://source.unsplash.com/600x400/?double-ipa,beer" alt="Doble IPA - La Maleducada" loading="lazy">
             <div class="badge">Doble IPA</div>
             <h3>Doble IPA</h3>
             <p class="muted">Más lúpulo, más cuerpo, más pecado por sorbo.</p>
-          </div>
+          </article>
 
-          <div class="card">
-            <img src="https://source.unsplash.com/600x400/?belgian,beer" alt="Belgian Dark Strong">
+          <article class="card" tabindex="0" role="button" data-title="Belgian Dark Strong Ale" data-image="https://source.unsplash.com/800x600/?belgian,dark,beer" data-desc="Oscura, especiada y elegante — un final memorable para quien la merece.">
+            <img src="https://source.unsplash.com/600x400/?belgian,beer" alt="Belgian Dark Strong Ale - La Maleducada" loading="lazy">
             <div class="badge">Belgian</div>
             <h3>Belgian Dark Strong Ale</h3>
             <p class="muted">Oscura, especiada y elegante — un final memorable.</p>
-          </div>
+          </article>
 
         </div>
       </section>
 
-      <section id="nosotros">
+      <!-- Manifiesto -->
+      <section id="nosotros" aria-labelledby="nosotros-title">
         <div class="section-title">
-          <h2>El Manifiesto</h2>
-          <p class="muted">La Maleducada: irreverencia con clase</p>
+          <h2 id="nosotros-title">El Manifiesto</h2>
+          <p class="muted">Irreverencia con oficio. Sensualidad con carácter.</p>
         </div>
         <div class="manifest" style="margin-top:18px">
           <div class="text">
-            <p class="muted">No nacimos para gustarle a todos. Nacimos para tentar a los que saben disfrutar sin pedir permiso. En La Maleducada hacemos cerveza con carácter: texturas, lúpulos y sabores que empujan los límites. Cada lata es una invitación al placer, un desafío a la rutina.</p>
-            <p style="margin-top:12px">Nuestra estética mezcla la sensualidad clásica del pinup con la crudeza del craft. Somos sofisticados, pero no pomposos. Rebeldes, pero con oficio. Y siempre, siempre, irreverentes.</p>
+            <p class="muted">No nacimos para gustarle a todos. Nacimos para tentar a los que no piden permiso. En La Maleducada hacemos cerveza con oficio, experimentando sabores que provocan y sorprenden. Nuestra estética mezcla la sensualidad clásica del pinup con la crudeza del craft. Somos sofisticados pero sin pompa; rebeldes, pero con técnica.</p>
+            <p style="margin-top:12px">Únete a nuestra comunidad: historias detrás de recetas, lanzamientos limitados y eventos clandestinos. Síguenos en Instagram y TikTok para no perderte nada.</p>
           </div>
           <div class="poster">
-            <img src="https://source.unsplash.com/400x600/?pinup,vintage" alt="Pinup vintage" style="width:100%;display:block">
+            <img src="https://source.unsplash.com/400x600/?pinup,vintage" alt="Pinup vintage" style="width:100%;display:block" loading="lazy">
           </div>
         </div>
       </section>
 
-      <section id="donde">
+      <!-- Dónde conseguirla -->
+      <section id="donde" aria-labelledby="donde-title">
         <div class="section-title">
-          <h2>Dónde conseguirla</h2>
-          <p class="muted">Puntos aliados y barras amigas en Bogotá</p>
+          <h2 id="donde-title">Dónde conseguirla</h2>
+          <p class="muted">Barras amigas y puntos de venta en Bogotá</p>
         </div>
         <div class="places" style="margin-top:18px">
           <div class="place">
@@ -248,18 +290,37 @@
             <div class="pill">Puntos de venta</div>
           </div>
         </div>
+
+        <div style="margin-top:18px">
+          <a class="cta" href="https://wa.me/573112851332?text=Hola%20La%20Maleducada%21%20Quiero%20distribuir%20tu%20cerveza" target="_blank">Quiero distribuir</a>
+        </div>
       </section>
 
-      <section id="contacto">
+      <!-- Comunidad / Redes -->
+      <section aria-labelledby="comunidad-title">
         <div class="section-title">
-          <h2>Contacto</h2>
+          <h2 id="comunidad-title">Únete a la pandilla</h2>
+          <p class="muted">Contenido sin filtro. Historias que no caben en una lata.</p>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;margin-top:18px;flex-wrap:wrap">
+          <a class="socials" href="https://instagram.com/cervezalamaleducada" target="_blank" rel="noopener">Instagram</a>
+          <a class="socials" href="https://www.tiktok.com/@la.maleducada.cra" target="_blank" rel="noopener">TikTok</a>
+          <a class="socials" href="https://wa.me/573112851332" target="_blank" rel="noopener">WhatsApp</a>
+          <div style="margin-left:auto;color:var(--muted);font-size:13px">Suscríbete a nuestras novedades (próximamente)</div>
+        </div>
+      </section>
+
+      <!-- Contacto -->
+      <section id="contacto" aria-labelledby="contacto-title">
+        <div class="section-title">
+          <h2 id="contacto-title">Contacto</h2>
           <p class="muted">¿Quieres distribuir o colaborar? Escríbenos.</p>
         </div>
         <div style="display:flex;gap:18px;align-items:center;margin-top:18px;flex-wrap:wrap">
           <div style="min-width:240px">
             <div style="font-weight:700">WhatsApp</div>
             <div class="muted" style="font-size:13px">+57 311 285 1332</div>
-            <a class="cta" href="https://wa.me/573112851332?text=Hola%20La%20Maleducada%21%20Quiero%20pedir%20informaci%C3%B3n%20sobre%20distribuci%C3%B3n" style="display:inline-block;margin-top:12px">Escríbenos</a>
+            <a class="cta" href="https://wa.me/573112851332?text=Hola%20La%20Maleducada%21%20Quiero%20informaci%C3%B3n" style="display:inline-block;margin-top:12px">Escríbenos</a>
           </div>
 
           <div>
@@ -282,32 +343,86 @@
 
     <footer>
       <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
-        <div>© La Maleducada CraftBeer — Hecha con rebeldía</div>
-        <div class="muted">Diseño provisional · Imágenes temporales</div>
+        <div>© La Maleducada CraftBeer — Hecha con rebeldía • Bogotá, Colombia</div>
+        <div class="muted">Diseño y contenido provisional — Imágenes temporales</div>
       </div>
     </footer>
   </div>
 
   <!-- WhatsApp floating -->
   <div class="whatsapp" aria-hidden="false">
-    <a href="https://wa.me/573112851332?text=Hola%20La%20Maleducada%21%20Quiero%20pedir%20informaci%C3%B3n" target="_blank" rel="noopener">WA</a>
+    <a href="https://wa.me/573112851332?text=Hola%20La%20Maleducada%21%20Quiero%20informaci%C3%B3n" target="_blank" rel="noopener">WA</a>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" role="dialog" aria-hidden="true">
+    <div class="box" role="document">
+      <div>
+        <h3 id="modal-title"></h3>
+        <p id="modal-desc" class="muted"></p>
+      </div>
+      <div>
+        <img id="modal-img" alt="Imagen cerveza">
+        <div style="margin-top:12px;display:flex;gap:8px">
+          <a id="modal-wa" class="cta" href="#" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+          <button id="modal-close" class="secondary" style="border:none;cursor:pointer">Cerrar</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script>
-    // Smooth anchor scroll
+    // Smooth anchor scroll (progressive enhancement)
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click',e=>{
-        e.preventDefault();
-        const id=a.getAttribute('href').slice(1);
-        if(!id) return; const el=document.getElementById(id);
-        if(el) el.scrollIntoView({behavior:'smooth'});
+        const href=a.getAttribute('href');
+        if(!href || href === '#') return;
+        if(href.startsWith('#')){
+          e.preventDefault();
+          const id=href.slice(1);
+          const el=document.getElementById(id);
+          if(el) el.scrollIntoView({behavior:'smooth'});
+        }
       })
-    })
+    });
 
-    // Small progressive enhancement: replace 'M' logo letter with stylized initial on load
-    document.addEventListener('DOMContentLoaded',()=>{
-      const logo=document.querySelector('.logo');
-      if(logo) logo.innerHTML = '<span style="font-family:Playfair Display, serif;font-size:28px;color:#111;">M</span>';
+    // Modal logic for beer cards
+    const cards = document.querySelectorAll('.card');
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDesc = document.getElementById('modal-desc');
+    const modalImg = document.getElementById('modal-img');
+    const modalWa = document.getElementById('modal-wa');
+    const modalClose = document.getElementById('modal-close');
+
+    function openModal(title,desc,image){
+      modalTitle.textContent = title;
+      modalDesc.textContent = desc;
+      modalImg.src = image;
+      modalImg.alt = title;
+      modalWa.href = 'https://wa.me/573112851332?text=' + encodeURIComponent('Hola La Maleducada! Quiero pedir: ' + title);
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden','false');
+    }
+    function closeModal(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); }
+
+    cards.forEach(c=>{
+      c.addEventListener('click',()=>{
+        openModal(c.dataset.title,c.dataset.desc,c.dataset.image);
+      });
+      c.addEventListener('keyup',(e)=>{ if(e.key === 'Enter' || e.key === ' ') openModal(c.dataset.title,c.dataset.desc,c.dataset.image); });
+    });
+    modalClose.addEventListener('click',closeModal);
+    modal.addEventListener('click',e=>{ if(e.target === modal) closeModal(); });
+    document.addEventListener('keydown',e=>{ if(e.key === 'Escape') closeModal(); });
+
+    // Accessibility: focus trap simple
+    modal.addEventListener('keydown', function(e){
+      if(e.key === 'Tab'){
+        // simple trap: keep focus inside modal (improvement possible)
+        e.preventDefault();
+        modalClose.focus();
+      }
     });
   </script>
 </body>
